@@ -46,8 +46,29 @@ h2 {
   font-weight: bold;
 }
 
+input {
+  border-radius: 5px;
+  border: 1px solid chocolate;
+  padding: 5px;
+  color: darkslategray;
+  font-weight: bold;
+}
+input[type=button] {
+  background-color: bisque;
+  cursor: pointer;
+}
+input[type=button]:hover {
+  background-color: lightsalmon;
+}
+input[type=button]:active {
+  background-color: coral;
+}
+input[type=number] {
+  width: 70px;
+}
+
 .drawn {
-  background-color: rgb(43, 105, 46);
+  background-color: rgb(40, 89, 185);
   border-color: bisque;
 }
 
