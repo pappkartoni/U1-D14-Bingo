@@ -1,7 +1,13 @@
+// Some global variables we need. The bingoBoard itself, 
+//the board containing the player cards, 
+// the array of numbers which we use to generate random permutation of numbers 
+// and finally a second array, to keep track of all the numbers that have already been drawn
 let bingoBoard = document.getElementById("bingoboard");
+let playerBoards = document.getElementById("playerboards");
 let numbers = [];
 let drawn = [];
 
+// Upon rereading the task I think I did not do this the intended way. However, my idea works as well and I even check for winners (in case of 5x5 board at least)!
 function drawRandom() {
     let available = numbers.filter(n => !drawn.includes(n));
 
@@ -30,7 +36,7 @@ function drawRandom() {
 
 function generateBoards() {
     let players = document.getElementById("numplayers").value;
-    document.getElementById("playerboards").innerHTML = ""; // new game new luck
+    playerBoards.innerHTML = ""; // new game new luck
     for (let i = 1; i <= players; i++) {
         let board = document.createElement("div");
         board.classList.add("playerboard");
@@ -48,7 +54,7 @@ function generateBoards() {
             }
         }
 
-        document.getElementById("playerboards").appendChild(board);
+        playerBoards.appendChild(board);
     }
 }
 
@@ -69,7 +75,7 @@ function generateDummyField(board) {
 
 // why did i do this?
 function checkWinnerN25() {                                         // This has to be made dynamic based on player board size as well
-    let players = document.getElementById("playerboards").children;
+    let players = playerBoards.children;
     for (let p of players) {
         let fields = p.children;
         if ((isDrawn(fields[1]) && isDrawn(fields[2]) && isDrawn(fields[3]) && isDrawn(fields[4]) && isDrawn(fields[5])) || 
