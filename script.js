@@ -78,23 +78,25 @@ function generateDummyField(board) {
 // why did i do this?
 function checkWinnerN25() {                                         // This has to be made dynamic based on player board size as well
     let players = playerBoards.children;
-    for (let p of players) {
-        let fields = p.children;
-        if ((isDrawn(fields[1]) && isDrawn(fields[2]) && isDrawn(fields[3]) && isDrawn(fields[4]) && isDrawn(fields[5])) || 
-            (isDrawn(fields[6]) && isDrawn(fields[7]) && isDrawn(fields[8]) && isDrawn(fields[9]) && isDrawn(fields[10])) ||
-            (isDrawn(fields[11]) && isDrawn(fields[12]) && isDrawn(fields[13]) && isDrawn(fields[14]) && isDrawn(fields[15])) ||
-            (isDrawn(fields[16]) && isDrawn(fields[17]) && isDrawn(fields[18]) && isDrawn(fields[19]) && isDrawn(fields[20])) ||
-            (isDrawn(fields[21]) && isDrawn(fields[22]) && isDrawn(fields[23]) && isDrawn(fields[24]) && isDrawn(fields[25])) ||
-            (isDrawn(fields[1]) && isDrawn(fields[6]) && isDrawn(fields[11]) && isDrawn(fields[16]) && isDrawn(fields[21])) ||
-            (isDrawn(fields[2]) && isDrawn(fields[7]) && isDrawn(fields[12]) && isDrawn(fields[17]) && isDrawn(fields[22])) ||
-            (isDrawn(fields[3]) && isDrawn(fields[8]) && isDrawn(fields[13]) && isDrawn(fields[18]) && isDrawn(fields[23])) ||
-            (isDrawn(fields[4]) && isDrawn(fields[9]) && isDrawn(fields[14]) && isDrawn(fields[19]) && isDrawn(fields[24])) ||
-            (isDrawn(fields[5]) && isDrawn(fields[10]) && isDrawn(fields[15]) && isDrawn(fields[20]) && isDrawn(fields[25])) ||
-            (isDrawn(fields[1]) && isDrawn(fields[7]) && isDrawn(fields[15]) && isDrawn(fields[19]) && isDrawn(fields[25])) ||
-            (isDrawn(fields[21]) && isDrawn(fields[17]) && isDrawn(fields[13]) && isDrawn(fields[9]) && isDrawn(fields[5]))
-        ) {
-            alert("BINGO");
-            p.classList.add("winner");
+    if (players[0].childElementCount === 26) {
+        for (let p of players) {
+            let fields = p.children;
+            if ((isDrawn(fields[1]) && isDrawn(fields[2]) && isDrawn(fields[3]) && isDrawn(fields[4]) && isDrawn(fields[5])) || 
+                (isDrawn(fields[6]) && isDrawn(fields[7]) && isDrawn(fields[8]) && isDrawn(fields[9]) && isDrawn(fields[10])) ||
+                (isDrawn(fields[11]) && isDrawn(fields[12]) && isDrawn(fields[13]) && isDrawn(fields[14]) && isDrawn(fields[15])) ||
+                (isDrawn(fields[16]) && isDrawn(fields[17]) && isDrawn(fields[18]) && isDrawn(fields[19]) && isDrawn(fields[20])) ||
+                (isDrawn(fields[21]) && isDrawn(fields[22]) && isDrawn(fields[23]) && isDrawn(fields[24]) && isDrawn(fields[25])) ||
+                (isDrawn(fields[1]) && isDrawn(fields[6]) && isDrawn(fields[11]) && isDrawn(fields[16]) && isDrawn(fields[21])) ||
+                (isDrawn(fields[2]) && isDrawn(fields[7]) && isDrawn(fields[12]) && isDrawn(fields[17]) && isDrawn(fields[22])) ||
+                (isDrawn(fields[3]) && isDrawn(fields[8]) && isDrawn(fields[13]) && isDrawn(fields[18]) && isDrawn(fields[23])) ||
+                (isDrawn(fields[4]) && isDrawn(fields[9]) && isDrawn(fields[14]) && isDrawn(fields[19]) && isDrawn(fields[24])) ||
+                (isDrawn(fields[5]) && isDrawn(fields[10]) && isDrawn(fields[15]) && isDrawn(fields[20]) && isDrawn(fields[25])) ||
+                (isDrawn(fields[1]) && isDrawn(fields[7]) && isDrawn(fields[15]) && isDrawn(fields[19]) && isDrawn(fields[25])) ||
+                (isDrawn(fields[21]) && isDrawn(fields[17]) && isDrawn(fields[13]) && isDrawn(fields[9]) && isDrawn(fields[5]))
+            ) {
+                alert("BINGO");
+                p.classList.add("winner");
+            }
         }
     }
 }
