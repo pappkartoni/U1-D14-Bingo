@@ -1,5 +1,5 @@
 // Some global variables we need. The bingoBoard itself, 
-//the board containing the player cards, 
+// the board containing the player cards, 
 // the array of numbers which we use to generate random permutation of numbers 
 // and finally a second array, to keep track of all the numbers that have already been drawn
 let bingoBoard = document.getElementById("bingoboard");
