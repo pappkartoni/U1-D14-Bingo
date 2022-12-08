@@ -45,6 +45,10 @@ h2 {
   margin: 2px;
   background-color: bisque;
   font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 input {
@@ -69,7 +73,7 @@ input[type=number] {
 }
 
 .drawn {
-  background-color: rgb(235, 231, 143);
+  background-color: rgb(94, 219, 252);
   border-color: bisque;
 }
 

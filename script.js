@@ -6,6 +6,7 @@ let bingoBoard = document.getElementById("bingoboard");
 let playerBoards = document.getElementById("playerboards");
 let numbers = [];
 let drawn = [];
+let maxNum = 77;
 
 // Upon rereading the task I think I did not do this the intended way. However, my idea works as well and I even check for winners (in case of 5x5 board at least)!
 function drawRandom() {
@@ -36,7 +37,8 @@ function drawRandom() {
 
 function generateBoards() {
     let players = document.getElementById("numplayers").value;
-    playerBoards.innerHTML = ""; // new game new luck
+    reset(maxNum); // new game new luck
+    drawn = [];
     for (let i = 1; i <= players; i++) {
         let board = document.createElement("div");
         board.classList.add("playerboard");
@@ -103,9 +105,11 @@ function isDrawn(node) {
 }
 
 function setMaxNumbers(n) {
+    let arr = [];
     for (let i=1;i<=n; i++) {
-        numbers.push(i)
+        arr.push(i);
     }
+    return arr;
 }
 
 function setRandomBG(node) {
@@ -123,11 +127,23 @@ function shuffleNumbers(numArray) { // https://en.wikipedia.org/wiki/Fisher%E2%8
     return numArray;
 }
 
-window.onload = function() {
-    setMaxNumbers(77); // i know the task said 76, but it looks so much cleaner with only full rows on my screen 
-    numbers = shuffleNumbers(numbers);
+function reset(n) {
+    let nums = document.querySelectorAll("#bingoboard .numberField");
+    bingoBoard.innerHTML = "";
+    playerBoards.innerHTML = ""; // new game new luck
+    drawn = [];
+    setup(n);
+}
 
+function setup(n) {
+    numbers = setMaxNumbers(n);
     for (let i=0;i<numbers.length;i++) { // create as many numberFields on the board as there are numbers set
         generateNumberField(numbers[i], bingoBoard);
     }
+}
+
+window.onload = function() {
+    // i know the task said 76, but it looks so much cleaner with only full rows on my screen 
+    // numbers = shuffleNumbers(numbers);
+    setup(maxNum);
 }
