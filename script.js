@@ -130,7 +130,6 @@ function shuffleNumbers(numArray) { // https://en.wikipedia.org/wiki/Fisher%E2%8
 }
 
 function reset(n) {
-    let nums = document.querySelectorAll("#bingoboard .numberField");
     bingoBoard.innerHTML = "";
     playerBoards.innerHTML = ""; // new game new luck
     drawn = [];
