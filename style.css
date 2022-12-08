@@ -1,0 +1,36 @@
+body {
+  background-color: darkslategray;
+  color: darkslategray;
+  text-align: center;
+}
+
+h1 {
+  color: azure;
+  font-size: 60px;
+}
+
+#container {
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+#bingoboard {
+  padding: 10px;
+}
+
+.numberField {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid chocolate;
+  line-height: 80px;
+  display: inline-block;
+  margin: 2px;
+  background-color: bisque;
+  font-weight: bold;
+}
+
+.drawn {
+  background-color: rgb(237, 107, 29);
+  border-color: bisque;
+}/*# sourceMappingURL=style.css.map */

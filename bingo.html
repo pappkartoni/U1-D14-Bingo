@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>That's a Bingo!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>BINGO</h1>
+        <div id="buttonbar">
+            <input type="button" value="Draw" onclick="drawRandom()" />
+            <input id="numplayers" type="number" min="1" max="100"  />
+            <input type="button" value="Play!" onclick="generateBoards()" />
+        </div>
+        <div id="bingoboard">
+
+        </div>
+        <div id="userboards">
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
